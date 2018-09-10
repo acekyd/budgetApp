@@ -16,3 +16,7 @@ Route::get('/transactions', 'TransactionsController@index');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
