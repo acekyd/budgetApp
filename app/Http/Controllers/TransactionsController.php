@@ -9,14 +9,10 @@ use App\Category;
 class TransactionsController extends Controller
 {
     //
-    public function index(Category $category = null) {
-        if($category->exists)
-        {
-            $transactions = Transaction::where('category_id', $category->id)->get();
-        }
-        else {
-            $transactions = Transaction::all();
-        }
+    public function index(Category $category) {
+
+        $transactions = Transaction::byCategory($category)->get();
+
         return view('transactions.index', compact('transactions'));
     }
 }
