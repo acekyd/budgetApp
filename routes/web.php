@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/transactions', 'TransactionsController@index');
+Route::get('/transactions/{category?}', 'TransactionsController@index');
 
 Route::get('/', function () {
     return view('welcome');

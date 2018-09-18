@@ -35,8 +35,9 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
-
+    $name = $faker->word;
     return [
-        'name' => $faker->word
+        'name' => $faker->word,
+        'slug' => str_slug($name)
     ];
 });
