@@ -28,6 +28,7 @@ $factory->define(App\Transaction::class, function (Faker\Generator $faker) {
 
     return [
         'description' => $faker->sentence(2),
+        'amount' => $faker->numberBetween(5, 10),
         'category_id' => function() {
             return create(App\Category::class)->id;
         }
